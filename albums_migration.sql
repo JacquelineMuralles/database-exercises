@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS albums (
     sales FLOAT NOT NULL,
     genre VARCHAR(500) NOT NULL,
     PRIMARY KEY (id)
-);
+);/Users/jacquelinemuralles/IdeaProjects/database-exercises/albums_migration.sql
