@@ -75,10 +75,11 @@ WHERE first_name = 'Irena'
   AND gender = 'Male';
 
 -- #*******************************Find all employees whose last name starts or ends with 'E' — 30,723 rows.***************************************************
-SELECT *
+# Update your queries for employees whose names start and end with 'E'.
+# Use concat() to combine their first and last name together as a single column in your results.
+SELECT CONCAT(first_name, last_name)
 FROM employees
-WHERE last_name LIKE 'E%'
-   OR last_name LIKE '%E';
+WHERE last_name LIKE 'E%E';
 
 #*******************Duplicate the previous query and update it to find all employees whose last name starts and ends with 'E' — 899 rows.***********************
 SELECT *
@@ -90,7 +91,10 @@ WHERE last_name LIKE 'E%'
 -- # Change the query for employees hired in the 90s and born on Christmas such that the first result is the oldest employee
 -- # who was hired last.
 -- # It should be Khun Bernini.
-SELECT *
+# For your query of employees born on Christmas and hired in the 90s,
+# use datediff() to find how many days they have been working at the company
+# (Hint: You will also need to use now() or curdate())
+SELECT DATEDIFF(CURDATE(), hire_date)
 FROM employees
 WHERE hire_date >= '1990%'
   AND hire_date < '2000%'
